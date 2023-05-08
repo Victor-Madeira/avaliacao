@@ -1,0 +1,62 @@
+<div>
+    <h2 class="text-center">Cadastro de usuários</h2>
+    <form id="cadastrarUsuario" class="form-align">
+        <mat-form-field appearance="fill" floatLabel="auto" class="form-input-component">
+            <mat-label>Primeiro Nome</mat-label>
+            <input matInput id="firstName" name="firstName" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill" floatLabel="auto" class="form-input-component">
+            <mat-label>Ultimo Nome</mat-label>
+            <input matInput id="lastName" name="lastName" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill" floatLabel="auto" class="form-input-component">
+            <mat-label>Email</mat-label>
+            <input matInput id="email" name="email" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill" floatLabel="auto" class="form-input-component">
+            <mat-label>Titulo</mat-label>
+            <mat-select matInput (selectionChange)="trocaTitulo($event.value)">
+                <mat-option value=""></mat-option>
+                <mat-option value="mr">Sr</mat-option>
+                <mat-option value="mrs">Sra</mat-option>
+                <mat-option value="ms">Srto</mat-option>
+                <mat-option value="miss">Srta</mat-option>
+                <mat-option value="dr">dr</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="form-input-component">
+            <mat-label>Sexo</mat-label>
+            <mat-select matInput (selectionChange)="trocaSexo($event.value)">
+                <mat-option value=""></mat-option>
+                <mat-option value="male">Masculino</mat-option>
+                <mat-option value="female">Feminino</mat-option>
+                <mat-option value="other">outros</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" floatLabel="auto" class="form-input-component">
+            <mat-label>Telefone</mat-label>
+            <input matInput id="phone" name="phone">
+        </mat-form-field>
+        <mat-form-field appearance="fill" floatLabel="auto" class="form-input-component">
+            <mat-label>Foto (link)</mat-label>
+            <input matInput id="picture" name="picture">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-input-component">
+            <mat-label>Data de nascimento</mat-label>
+            <input matInput [matDatepicker]="picker" id="dateOfBirth" name="dateOfBirth">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+          
+        <div class="text-right">
+            <button type='button' mat-raised-button [routerLink]="['/usuario-lista']" class="margin-r-15">
+                Voltar
+            </button>
+            <button type='button' mat-raised-button class="btn-red" (click)="onSubmit()" >
+                Cadastrar
+            </button>
+        </div>
+    </form>
+</div>

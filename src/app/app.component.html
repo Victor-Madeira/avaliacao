@@ -1,0 +1,45 @@
+<mat-toolbar class="toolbar">
+    <mat-toolbar-row>
+      <mat-list>
+        <mat-list-item>
+          <h1>Gestão de usuários</h1>
+        </mat-list-item>
+      </mat-list>
+      <button mat-icon-button aria-label="Botão para visualizar notificações" matTooltip="Notificações" class="btn-notificacoes">
+        <mat-icon>notifications_none</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  
+  <mat-sidenav-container>
+    <mat-sidenav [(opened)]="opened" mode="side" class="sidenav">
+      <mat-nav-list>
+        <mat-list-item class="sidebar-space">
+          <a routerLink="/admissao-inicio"><mat-icon class="sidebar-burguer">menu</mat-icon></a>
+        </mat-list-item>
+        <mat-list-item class="sidebar-space">
+          <a routerLink="/admissao-inicio"><mat-icon class="sidebar-icon">search</mat-icon></a>
+        </mat-list-item>
+        <mat-list-item class="sidebar-space">
+          <a routerLink="/admissao-inicio"><mat-icon class="sidebar-icon">home</mat-icon></a>
+        </mat-list-item>
+        <mat-list-item class="sidebar-space">
+          <a routerLink="/admissao-inicio"><mat-icon class="sidebar-icon">star_border</mat-icon></a>
+        </mat-list-item>
+        <mat-list-item class="sidebar-space">
+          <a routerLink="/admissao-inicio"><mat-icon class="sidebar-icon">sms</mat-icon></a>
+        </mat-list-item>
+        <mat-list-item class="sidebar-space">
+          <a routerLink="/admissao-inicio"><mat-icon class="sidebar-icon">list_alt</mat-icon></a>
+        </mat-list-item>
+        <mat-list-item class="sidebar-space">
+          <a routerLink="/admissao-inicio"><mat-icon class="sidebar-icon">location_city</mat-icon></a>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content class="background">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
